@@ -1,4 +1,4 @@
-FROM rhel7
+FROM registry.access.redhat.com/rhel7:latest
 # This image provides a .NET Core 1.0 environment you can use to run your .NET
 # applications.
 
