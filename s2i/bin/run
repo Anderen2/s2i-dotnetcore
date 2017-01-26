@@ -16,8 +16,8 @@ ARG_FILE="arguments.txt"
 if [[ -f "${ARG_FILE}" ]]; then
   echo "---> Running application with arguments from file '${ARG_FILE}' ..."
   PROG_ARGS="$(cat ${ARG_FILE})"
-  cd "${APP_DLL_DIR}" && exec dotnet "${APP_DLL_NAME}" ${PROG_ARGS}
+  cd "${APP_DLL_DIR}" && export ASPNETCORE_URLS="http://*:5000" && exec dotnet "${APP_DLL_NAME}" ${PROG_ARGS}
 else
   echo "---> Running application ..."
-  cd "${APP_DLL_DIR}" && exec dotnet "${APP_DLL_NAME}"
+  cd "${APP_DLL_DIR}" && export ASPNETCORE_URLS="http://*:5000" && exec dotnet run
 fi
