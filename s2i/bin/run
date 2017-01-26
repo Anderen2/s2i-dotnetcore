@@ -19,5 +19,5 @@ if [[ -f "${ARG_FILE}" ]]; then
   cd "${APP_DLL_DIR}" && export ASPNETCORE_URLS="http://*:5000" && exec dotnet "${APP_DLL_NAME}" ${PROG_ARGS}
 else
   echo "---> Running application ..."
-  cd "${APP_DLL_DIR}" && export ASPNETCORE_URLS="http://*:5000" && exec dotnet run
+  cd "${APP_DLL_DIR}" && export ASPNETCORE_URLS="http://*:5000" && exec dotnet "${APP_DLL_NAME}"
 fi
